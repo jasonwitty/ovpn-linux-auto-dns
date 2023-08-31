@@ -2,7 +2,7 @@
 
  Automatically update resolv.conf on linux systems when using OVPN (open VPN) connection.
 
-If you are sucessfully able to connect to an open vpn connection but you are not able to resolve some of the private urls for your org the likely reason for this is that there is a private DNS instance which holds these zone files which is not being used by your system. On windows and MAC the open VPN client will automatically update your DNS settings but this does not seem to work as expected on linux clients.
+If you are sucessfully able to connect to an open vpn connection but you are not able to resolve some of the private urls for your org the likely reason for this is that there is a private DNS instance which holds these zone files which are not being used by your system. On windows and MAC the open VPN client will automatically update your DNS settings but this does not seem to work as expected on linux clients.
 
 Previously I was using the project https://github.com/jonathanio/update-systemd-resolved but this has a dependency on resolvconf svc which is not used in many distributions like Fedora and Debian and attempting to install it can have unexpected results. I was looking for a more simple solution that updated resolv.conf directly. This application will parse the std out of the openvpn connection, search for DNS servers and take the first match, then it will check your /etc/resolv.conf for this entry and if it is not available it will be added as the primary DNS server.
 
