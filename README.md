@@ -14,35 +14,35 @@ This requires the open vpn command line interface, I have made no attempt to imp
 
 Install Rust
 
-'''bash
+```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-'''
+```
 
 Build application
 
-'''bash
+```bash
 git clone https://github.com/jasonwitty/ovpn-linux-auto-dns/
 cd ovpn-linux-auto-dns
 cargo build --release
-'''
+```
 
 Add path to .bashrc (~/.bashrc) and save.
 
-'''bash
+```bash
 export PATH="$PATH:/home/jason/Documents/GitHub/ovpn-linux-auto-dns/target/release/"
-'''
+```
 
 reload
 
-'''bash
+```bash
 source ~/.bashrc
-'''
+```
 
 # usage
 
 Simply pipe the output of your open vpn connection to this program
 
-'''
+```bash
 sudo openvpn --config ./any.ovpn --script-security 2 | sudo ovpn-linux-auto-dns
 Enter Auth Username: Jason.Witty
 Enter Auth Password: ****************
@@ -50,4 +50,4 @@ CHALLENGE: Enter Authenticator Code 000000
 Found DNS entry: x.x.x.x
 Successfully added x.x.x.x to /etc/resolv.conf
 Complete, Added : x.x.x.x to resolv.conf. exiting...
-'''
+```
