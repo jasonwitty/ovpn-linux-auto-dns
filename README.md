@@ -6,7 +6,7 @@ If you are sucessfully able to connect to an open vpn connection but you are not
 
 Previously I was using the project https://github.com/jonathanio/update-systemd-resolved but this has a dependency on resolvconf svc which is not used in many distributions like Fedora and Debian and attempting to install it can have unexpected results. I was looking for a more simple solution that updated resolv.conf directly. This application will parse the std out of the openvpn connection, search for DNS servers and take the first match, then it will check your /etc/resolv.conf for this entry and if it is not available it will be added as the primary DNS server.
 
-This application will not remove the record after the VPN connection is stopped, in my experiance these will be removed on restart anyway and this solution is good enough for my needs. 
+This application will not remove the record after the VPN connection is stopped, in my experiance these will be removed on restart or when connection is reset. Connection reset and restart will also disconnect VPN so it does not seem that at least in my configuration this feature is required. 
 
 This requires the open vpn command line interface, I have made no attempt to implement this with any connection manager from a specific distro.
 
