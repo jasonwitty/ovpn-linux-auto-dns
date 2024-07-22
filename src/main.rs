@@ -13,7 +13,7 @@ fn main() {
     //read from stdin and search for string "DNS" and then add the ip to resolv.conf
     for line in stdin.lock().lines() {
         let line = line.unwrap();
-        let mut iter = line.split("DNS ");
+        let mut iter = line.split("dns server 10 address ");
         iter.next();
 
         for item in iter {
